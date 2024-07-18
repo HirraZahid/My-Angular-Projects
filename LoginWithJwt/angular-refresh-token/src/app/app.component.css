@@ -1,0 +1,11 @@
+h1{
+    color: #fff;
+}
+
+.heading{
+    background-color:  rgb(226, 7, 113);
+    height: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
