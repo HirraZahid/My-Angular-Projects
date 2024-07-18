@@ -1,0 +1,15 @@
+<div>
+    <form (ngSubmit)="openWebsite()">
+      <label for="websiteUrl">Website URL:</label>
+      <input id="websiteUrl" [(ngModel)]="websiteUrl" name="websiteUrl" required />
+      <button type="submit">Open Website</button>
+    </form>
+  
+    <iframe
+      *ngIf="websiteUrl"
+      [src]="sanitizer.bypassSecurityTrustResourceUrl(websiteUrl)"
+      width="100%"
+      height="500px"
+      (load)="attachClickListener()"
+    ></iframe>
+</div>
