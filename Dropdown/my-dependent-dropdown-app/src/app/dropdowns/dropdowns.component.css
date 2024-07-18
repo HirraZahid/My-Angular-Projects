@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* -----------main header------------- */
+.heading{
+    background-color: rgb(211, 87, 114);
+    padding: 3vw;
+    border-radius:5px ;
+    margin-bottom: 3vw;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #3C1053FF;
+}
+/* -------------selections div----------------- */
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    margin-bottom: 5vw;
+    flex-wrap: wrap;
+}
+label{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #3C1053FF;
+}
+select{
+    margin-top: 1.5vw;
+width: 15vw;
+height: 3vw;
+border-radius: 5px;
+color: #3C1053FF;
+font-weight: 600;
+border: 2px solid  rgb(211, 87, 114);
+}
+.select-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+}
+/* ---------------------buttons div---------------- */
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+
+/* CSS */
+.button-58 {
+  align-items: center;
+  background-color: #3C1053FF;
+  border: 2px solid #3C1053FF;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #fff;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+.button-58:hover {
+  background-color: rgb(113, 28, 159);
+  border-color: rgb(113, 28, 159);
+  fill: rgb(113, 28, 159);
+}
+
+/* -------------------------Selected data div--------------------------------------- */
+.selected-data-box {
+  margin-top: 3vw;
+  padding: 2vw;
+ 
+  border-radius: 5px;
+  background-color: #3C1053FF;
+}
+
+.selected-data-box h3 {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.selected-data-box p {
+  margin: 5px 0;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .button-58 {
+    min-width: 170px;
+  }
+  .selection{
+
+     display: grid;
+     grid-template-columns: 1fr ;
+     gap: 3vw;
+     margin-bottom: 5vw;
+     flex-wrap: wrap;
+  }
+  select{
+    width: 15vw;
+    height: 5vw;
+  }
+}
+@media (max-width: 430px) {
+    .button-58 {
+      max-width: 150px;
+    }
+    .selection{
+  
+       display: grid;
+       grid-template-columns: 1fr ;
+       gap: 3vw;
+       margin-bottom: 5vw;
+       flex-wrap: wrap;
+    }
+    select{
+      width: 40vw;
+      height: 7vw;
+    }
+  }
+  

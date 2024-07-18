@@ -1,0 +1,59 @@
+<div class="Container">
+<div class="heading">
+<h1>Dependent Dropdown Angular</h1>
+</div>
+<div class="selection">
+<!-- -----------------------------Client----------------------------------- -->
+<div class="select-div">
+    <label for="client">Select Client</label>
+    <select id="client" (change)="onClientChange($event)">
+      <option value="">Select</option>
+      <option *ngFor="let client of clients" [value]="client.clientId">{{ client.clientName }}</option>
+    </select>
+</div>
+<!-- -----------------------------Site----------------------------------- -->
+
+<div class="select-div">
+    <label for="site">Select Site</label>
+    <select id="site" [disabled]="!selectedClientId" (change)="onSiteChange($event)">
+      <option value="">Select</option>
+      <option *ngFor="let site of sites" [value]="site.siteId">{{ site.siteName }}</option>
+    </select>
+</div>
+<!-- -----------------------------Bluiding----------------------------------->
+<div class="select-div">
+    <label for="building">Select Building</label>
+    <select id="building" [disabled]="!selectedSiteId" (change)="onBuildingChange($event)">
+      <option value="">Select</option>
+      <option *ngFor="let building of buildings" [value]="building.buildingId">{{ building.buildingName }}</option>
+    </select>
+</div>
+<!-- -----------------------------Floor----------------------------------- -->
+<div class="select-div">
+    <label for="floor">Select Floor</label>
+    <select id="floor" [disabled]="!selectedBuildingId" (change)="onFloorChange($event)">
+      <option value="">Select</option>
+      <option *ngFor="let floor of floors" [value]="floor.floorId">{{ floor.floorName }}</option>
+    </select>
+</div>
+</div>
+<!-- -------------------------Buttons--------------------------------------- -->
+<div class="buttons">
+    <button class="button-58" (click)="refresh()" >Refresh</button>
+    <button class="button-58" (click)="save()">Save</button>
+  </div>
+
+
+<!------------------ Display selected data ------------------------>
+<div *ngIf="showSelectedData" class="selected-data-box">
+    <h3>Selected Data</h3>
+    <p><strong>Client:</strong> {{ selectedClientName }}</p>
+    <p><strong>Site:</strong> {{ selectedSiteName }}</p>
+    <p><strong>Building:</strong> {{ selectedBuildingName }}</p>
+    <p><strong>Floor:</strong> {{ selectedFloorName }}</p>
+  </div>
+</div>
+
+
+
+
