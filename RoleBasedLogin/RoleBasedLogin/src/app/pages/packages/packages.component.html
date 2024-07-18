@@ -1,0 +1,13 @@
+<h2>Packages</h2>
+<div>
+    
+    <ul>
+      <li *ngFor="let package of packages">
+        <strong>{{ package.name }}</strong>
+        <ul>
+          <li *ngFor="let feature of package.features">{{ feature }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  

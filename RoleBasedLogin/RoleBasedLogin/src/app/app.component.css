@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+nav{
+    background-color: #101820FF;
+    width: 100%;
+    height: 6vw;
+    border-radius: 5px;
+    
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    padding-top: 2.5vw;
+
+}
+nav a{
+    color: #FEE715FF;
+    font-size: 1.7rem;
+    
+}

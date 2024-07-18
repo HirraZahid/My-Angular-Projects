@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+    <li *ngIf="isClient()">,<a routerLink="/dashboard">Home</a></li>
+    <li *ngIf="isAdmin()"><a routerLink="/dashboard">Dashboard</a></li>
+    <li *ngIf="isAdmin()"><a routerLink="/packages">Packages</a></li>
+    <li *ngIf="isAdmin()"><a routerLink="/users">Users</a></li>
+    <li *ngIf="isClient()"><a routerLink="/rooms">Rooms</a></li>
+    <li *ngIf="isClient()"><a routerLink="/booking">Room Booking</a></li>
+    <li *ngIf="isClient()"><a routerLink="/clientpackages">Client Packages</a></li>
+    <li *ngIf="isLogedIn()"><a href="#" (click)="logout()">Logout</a></li>
+    <li *ngIf="!isLogedIn()" style="color: #FEE715FF; font-size: 1.5rem;">Welcome To Role Based Login</li>
+
+  </ul>
+</nav>
+<router-outlet></router-outlet>

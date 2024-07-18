@@ -1,0 +1,16 @@
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 5vw;
+    margin-bottom: 4vw;
+}
+div{
+    background-color: #FEE715FF;
+    width: 30%;
+    padding: 15px;
+
+}
+div ul li {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
