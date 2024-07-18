@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+/* -----------------main heading--------------------- */
+.main-heading{
+    text-align: center;
+    padding: 3vw;
+    background-color: rgb(243, 153, 200);
+    color: #fff;
+    font-size: 1.7rem;
+    border-radius:7px ;
+}
+
+/* -------------------search div------------------------------------------------ */
+.searchandadd{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vw;
+    background-color: #FCF5F6FF;
+    border-radius: 5px;
+    margin-top: 0;
+}
+.search-div{
+    padding: 2vw;
+    background-color: #FCF5F6FF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    justify-content: center;
+   
+    /* text-align: center; */
+}
+.search-div h2{
+    font-size: 1.4rem;
+    /* text-align: center; */
+    margin-bottom: 2vw;
+    color: rgb(243, 153, 200);
+
+}
+.search-div input{
+    width: 20vw;
+    height: 3vw;
+    padding: 1vw;
+    border: 1px solid rgb(243, 153, 200);
+    outline: 2px solid rgb(243, 153, 200);
+}
+
+.adduser{
+    background-color:rgb(243, 153, 200);
+    padding: 5vw;
+    width: 50%;
+    align-items: center;
+    margin-top: 0!important;
+    ;
+    
+}
+.adduser h3{
+    font-size: 1.7rem;
+    /* text-align: center; */
+    margin-bottom: 2vw;
+    color: white
+}
+.adduser label{
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1vw;
+  
+}
+.adduser input{
+    width: 67%;
+    padding: 5px;
+    border: 1px solid rgb(251, 72, 164);
+    outline: 2px solid rgb(251, 72, 164);
+    margin-bottom:1vw ;
+}
+.adduser button{
+    margin-top: 2vw;
+}
+.user-list-edit label{
+
+    display: block;
+    font-size: 1.2rem;
+    color: rgb(251, 72, 164);
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+.user-list-edit input{
+    width: 67%;
+    padding: 5px;
+    border: 1px solid rgb(251, 72, 164);
+    outline: 2px solid rgb(251, 72, 164);
+    margin-bottom:1vw ;
+}
+.items{
+    background-color: #FCF5F6FF;
+    /* margin-bottom: 5vw; */
+}
+.items ul {
+    display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    padding: 2vw;
+    border-bottom: 1px solid #E6E6E6;
+    gap: 1vw;
+}
+
+.items ul li a,p{
+    /* display: block; */
+    font-size: 1.2rem;
+    color: rgb(251, 72, 164);
+    margin-bottom: 1vw;
+    margin-top: 0.5vw;  
+}
+.items button{
+   margin-right: 2vw;
+}
+.items ul li{
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    padding: 5vw;
+   
+}
+.main-heading2{
+    background-color: #FCF5F6FF;
+    font-size: 1.8rem;
+    color: #1366d6;
+    text-align: center;
+    padding: 3vw;
+    
+}
+
+/* CSS */
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #2f80ed;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-65:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-65:hover:after {
+  opacity: .5;
+}
+
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-65:active:after {
+  opacity: 1;
+}
+
+/* app.component.css */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+}
+
+pagination-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2vw;
+    padding: 1vw;
+    background-color:rgb(243, 153, 200);
+    
+    justify-items: center; 
+    align-items: center;
+    margin-bottom:0 ;
+  
+}
+
+
+
+@media (min-width: 768px) {
+  .button-65 {
+    padding: 14px 22px;
+    width: 176px;
+  }
+}
+

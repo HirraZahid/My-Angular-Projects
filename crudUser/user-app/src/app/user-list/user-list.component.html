@@ -1,0 +1,105 @@
+<div class="main-heading">
+  <h2>API CRUD WITH SEARCH AND PAGINATION</h2>
+</div>
+
+<div class="search-div">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by name" />
+  <button class="button-65" (click)="search()">Search</button>
+</div>
+<div *ngIf="users.length === 0">
+  No user matches the search criteria.
+</div>
+
+<div class="user-list">
+  <div class="main-heading2">
+    <h2>Users List</h2>
+  </div>
+
+  <div class="items">
+    <ul>
+      <li *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+        <div *ngIf="editingUserId !== user.id">
+          <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
+          <p>Email: {{ user.email }}</p>
+          <p>Phone: {{ user.phone }}</p>
+
+          <button class="button-65" (click)="startEditing(user)">Update</button>
+          <button class="button-65" (click)="deleteUser(user.id)">Delete</button>
+        </div>
+        <div *ngIf="editingUserId === user.id">
+          <form [formGroup]="editUserForm" (ngSubmit)="saveUser()">
+            <div class="user-list-edit">
+              <label>Name:</label>
+              <input formControlName="name">
+              <div *ngIf="editUserForm.get('name')?.invalid && editUserForm.get('name')?.touched">
+                <small *ngIf="editUserForm.get('name')?.errors?.['required']">Name is required.</small>
+                <small *ngIf="editUserForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+              </div>
+            </div>
+            <div class="user-list-edit">
+              <label>Email:</label>
+              <input formControlName="email">
+              <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched">
+                <small *ngIf="editUserForm.get('email')?.errors?.['required']">Email is required.</small>
+                <small *ngIf="editUserForm.get('email')?.errors?.['email']">Invalid email address.</small>
+              </div>
+            </div>
+            <div class="user-list-edit">
+              <label>Phone:</label>
+              <input formControlName="phone">
+              <div *ngIf="editUserForm.get('phone')?.invalid && editUserForm.get('phone')?.touched">
+                <small *ngIf="editUserForm.get('phone')?.errors?.['required']">Phone number is required.</small>
+                <small *ngIf="editUserForm.get('phone')?.errors?.['pattern']">Phone number must be exactly 11 digits.</small>
+              </div>
+            </div>
+            <button class="button-65" type="submit" [disabled]="editUserForm.invalid">Save</button>
+            <button class="button-65" type="button" (click)="cancelEditing()">Cancel</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+
+<div class="searchandadd">
+  <div class="adduser">
+    <h3>Add New User</h3>
+    <form [formGroup]="newUserForm" (ngSubmit)="addUser()">
+      <div>
+        <label>Name:</label>
+        <input formControlName="name">
+        <div *ngIf="newUserForm.get('name')?.invalid && newUserForm.get('name')?.touched">
+          <small *ngIf="newUserForm.get('name')?.errors?.['required']">Name is required.</small>
+          <small *ngIf="newUserForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+        </div>
+      </div>
+      <div>
+        <label>Username:</label>
+        <input formControlName="username">
+        <div *ngIf="newUserForm.get('username')?.invalid && newUserForm.get('username')?.touched">
+          <small *ngIf="newUserForm.get('username')?.errors?.['required']">Username is required.</small>
+          <small *ngIf="newUserForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters long.</small>
+        </div>
+      </div>
+      <div>
+        <label>Email:</label>
+        <input formControlName="email">
+        <div *ngIf="newUserForm.get('email')?.invalid && newUserForm.get('email')?.touched">
+          <small *ngIf="newUserForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="newUserForm.get('email')?.errors?.['email']">Invalid email address.</small>
+        </div>
+      </div>
+      <div>
+        <label>Phone:</label>
+        <input formControlName="phone">
+        <div *ngIf="newUserForm.get('phone')?.invalid && newUserForm.get('phone')?.touched">
+          <small *ngIf="newUserForm.get('phone')?.errors?.['required']">Phone number is required.</small>
+          <small *ngIf="newUserForm.get('phone')?.errors?.['pattern']">Phone number must be exactly 11 digits.</small>
+        </div>
+      </div>
+      <button class="button-65" type="submit" [disabled]="newUserForm.invalid">Add User</button>
+    </form>
+  </div>
+</div>
